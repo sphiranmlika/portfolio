@@ -1,12 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Download } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/shared/Icons";
 import { personalInfo } from "@/data/personal";
 
+const positions = [
+  "( Software Engineer )",
+  "( Mobile Developer )",
+  "( Full Stack Developer )",
+  "( Frontend Developer )",
+  "( AI Solutions Engineer )",
+];
+
 export function Hero() {
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % positions.length);
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="home"
@@ -33,24 +51,12 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Professional Title Subheading */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
-          className="pt-2"
-        >
-          <p className="normal-text text-lg sm:text-xl md:text-2xl text-[#f5ebe0]/90 tracking-[2px]">
-            ( {personalInfo.title} )
-          </p>
-        </motion.div>
-
         {/* Action Buttons: CV Download & Social Links */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-4 pt-6"
+          transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+          className="flex flex-wrap items-center justify-center gap-4 pt-4 sm:pt-6"
         >
           {/* Download CV */}
           <a
@@ -84,6 +90,21 @@ export function Hero() {
               <LinkedinIcon className="w-4 h-4" />
             </a>
           </div>
+        </motion.div>
+
+        {/* Rotating Job Titles positioned below buttons matching judiemosinabre.dev */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
+          className="pt-6 sm:pt-8 min-h-[52px] flex items-center justify-center"
+        >
+          <span
+            key={titleIndex}
+            className="fade normal-text text-lg sm:text-xl md:text-2xl text-[#f5ebe0]/90 tracking-[2px] select-none inline-block"
+          >
+            {positions[titleIndex]}
+          </span>
         </motion.div>
       </div>
     </section>

@@ -250,3 +250,23 @@
 .current-pulse-dot {
   animation: pulseDot 2.4s ease-in-out infinite;
 }
+
+/* Job Title Cycling Animation (matching judiemosinabre.dev) */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  20%, 80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.fade {
+  animation: fadeInOut 2s ease-in-out forwards;
+}
