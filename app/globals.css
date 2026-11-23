@@ -59,11 +59,13 @@
     border-color: rgba(255, 255, 255, 0.08);
     box-sizing: border-box;
   }
+
   html {
     scroll-behavior: smooth;
     background-color: #050505;
     color: #f5ebe0;
   }
+
   body {
     background-color: #050505;
     color: #f5ebe0;
@@ -129,12 +131,14 @@
   25% {
     transform: translate3d(5%, -4%, 0) rotate(45deg) scale(1.05);
   }
+
   50% {
     transform: translate3d(-4%, 5%, 0) rotate(90deg) scale(0.97);
   }
   75% {
     transform: translate3d(4%, 3%, 0) rotate(135deg) scale(1.03);
   }
+
   100% {
     transform: translate3d(0%, 0%, 0) rotate(180deg) scale(1);
   }
@@ -243,6 +247,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -285,9 +290,12 @@
 
 /* Pulse animation for Current Experience dot */
 @keyframes pulseDot {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 0 4px rgba(76, 5, 9, 0.3), 0 0 16px rgba(196, 30, 74, 0.4);
   }
+
   50% {
     box-shadow: 0 0 0 8px rgba(76, 5, 9, 0.4), 0 0 24px rgba(196, 30, 74, 0.7);
   }
@@ -303,10 +311,13 @@
     opacity: 0;
     transform: translateY(6px);
   }
-  20%, 80% {
+
+  20%,
+  80% {
     opacity: 1;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-6px);
