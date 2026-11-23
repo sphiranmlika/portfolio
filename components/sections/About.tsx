@@ -94,11 +94,11 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
         {/* Right Column: Tabbed Content Container */}
         <div className="lg:col-span-7 flex flex-col">
           {/* Enhanced Nav Buttons Container */}
-          <div className="about-nav-container inline-flex items-center gap-2 p-1.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] mb-8 w-fit">
+          <div className="about-nav-container flex flex-wrap items-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] mb-8 w-fit max-w-full">
             <button
               type="button"
               onClick={() => handleTabClick("about")}
-              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
+              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-sans text-[11px] sm:text-xs md:text-sm tracking-[1px] sm:tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
                 currentTab === "about"
                   ? "bg-white/[0.09] text-white font-medium shadow-sm"
                   : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
@@ -109,7 +109,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
             <button
               type="button"
               onClick={() => handleTabClick("skills")}
-              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
+              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-sans text-[11px] sm:text-xs md:text-sm tracking-[1px] sm:tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
                 currentTab === "skills"
                   ? "bg-white/[0.09] text-white font-medium shadow-sm"
                   : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
@@ -120,7 +120,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
             <button
               type="button"
               onClick={() => handleTabClick("cert")}
-              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
+              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-sans text-[11px] sm:text-xs md:text-sm tracking-[1px] sm:tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
                 currentTab === "cert"
                   ? "bg-white/[0.09] text-white font-medium shadow-sm"
                   : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
