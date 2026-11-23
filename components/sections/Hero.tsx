@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Download } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/shared/Icons";
 import { personalInfo } from "@/data/personal";
@@ -20,7 +20,7 @@ export function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setTitleIndex((prev) => (prev + 1) % positions.length);
-    }, 2000);
+    }, 2800);
 
     return () => clearInterval(timer);
   }, []);
@@ -28,10 +28,10 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center text-[#f5ebe0] px-6 sm:px-8 pt-24 pb-16 overflow-hidden"
+      className="relative min-h-[78vh] sm:min-h-[82vh] lg:min-h-[85vh] w-full flex flex-col justify-center items-center text-[#f5ebe0] px-6 sm:px-8 pt-28 sm:pt-32 pb-8 sm:pb-10 overflow-hidden"
     >
       {/* Central Hero Heading */}
-      <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto z-10 space-y-3 sm:space-y-4">
+      <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,8 +44,8 @@ export function Hero() {
           </h1>
 
           {/* Expressive Cursive Text */}
-          <div className="relative inline-flex items-center justify-center">
-            <span className="cursive-text text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] leading-[0.75] py-2 text-[#f5ebe0]">
+          <div className="relative inline-flex items-center justify-center mt-1 sm:mt-2 mb-2 sm:mb-4">
+            <span className="cursive-text text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] leading-[0.8] py-2 text-[#f5ebe0]">
               portfolio
             </span>
           </div>
@@ -56,7 +56,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-4 pt-4 sm:pt-6"
+          className="flex flex-wrap items-center justify-center gap-4 pt-8 sm:pt-12 md:pt-14"
         >
           {/* Download CV */}
           <a
@@ -92,19 +92,28 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Rotating Job Titles positioned below buttons matching judiemosinabre.dev */}
+        {/* Rotating Job Titles positioned below buttons */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
-          className="pt-6 sm:pt-8 min-h-[52px] flex items-center justify-center"
+          className="pt-6 sm:pt-8 h-12 flex items-center justify-center relative overflow-hidden"
         >
-          <span
-            key={titleIndex}
-            className="fade normal-text text-lg sm:text-xl md:text-2xl text-[#f5ebe0]/90 tracking-[2px] select-none inline-block"
-          >
-            {positions[titleIndex]}
-          </span>
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={titleIndex}
+              initial={{ opacity: 0, y: 8, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              className="normal-text text-lg sm:text-xl md:text-2xl text-[#f5ebe0]/90 tracking-[2px] select-none inline-block text-center"
+            >
+              {positions[titleIndex]}
+            </motion.span>
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>

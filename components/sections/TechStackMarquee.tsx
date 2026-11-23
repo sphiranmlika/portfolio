@@ -9,7 +9,7 @@ export function TechStackMarquee() {
   const doubleList = [...marqueeTechnologies, ...marqueeTechnologies];
 
   return (
-    <div className="w-full py-12 border-y border-white/[0.08] bg-[#050505]/60 overflow-hidden relative">
+    <div className="w-full py-6 sm:py-8 border-y border-white/[0.08] bg-[#050505]/60 overflow-hidden relative">
       {/* Edge gradient masks */}
       <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
