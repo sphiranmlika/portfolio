@@ -60,14 +60,14 @@ export function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Brand Logo */}
         <Link
           href="/#home"
           onClick={(e) => handleNavClick(e, "/#home")}
           className="group inline-flex items-center gap-2"
         >
-          <span className="font-heading font-light text-2xl sm:text-3xl tracking-[3px] lowercase text-[#f5ebe0] opacity-90 group-hover:opacity-100 transition-opacity">
+          <span className="font-heading font-light text-xl sm:text-2xl md:text-3xl tracking-[2px] sm:tracking-[3px] lowercase text-[#f5ebe0] opacity-90 group-hover:opacity-100 transition-opacity">
             saphiranurmalika
           </span>
         </Link>
