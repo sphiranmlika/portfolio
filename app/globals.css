@@ -80,6 +80,8 @@
   overflow: hidden;
   isolation: isolate;
   background-color: var(--black-rich);
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .hero::before {
