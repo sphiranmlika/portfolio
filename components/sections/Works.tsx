@@ -18,12 +18,12 @@ export function Works() {
   });
 
   return (
-    <section id="works" className="py-24 sm:py-32 relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="works" className="py-20 sm:py-32 relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
       {/* Section Heading */}
-      <div className="text-center mb-12 sm:mb-16">
-        <h2 className="heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[2px] font-light text-[#f5ebe0] uppercase leading-none inline-flex items-center gap-3 sm:gap-5 justify-center flex-wrap">
+      <div className="text-center mb-10 sm:mb-16">
+        <h2 className="heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[2px] font-light text-[#f5ebe0] uppercase leading-none inline-flex items-center gap-2 sm:gap-4 justify-center flex-wrap">
           <span>my</span>
-          <span className="cursive-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-[#f5ebe0] lowercase">
+          <span className="cursive-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#f5ebe0] lowercase">
             works
           </span>
         </h2>
