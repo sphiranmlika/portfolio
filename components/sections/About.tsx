@@ -28,19 +28,19 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
   return (
     <section id="about" className="py-24 sm:py-32 relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       {/* Editorial Section Heading */}
-      <div className="text-center mb-16 sm:mb-20">
-        <h2 className="heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[2px] font-light text-[#f5ebe0] uppercase leading-none inline-flex items-center gap-3 sm:gap-5 justify-center flex-wrap">
+      <div className="text-center mb-12 sm:mb-16 md:mb-20">
+        <h2 className="heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[2px] font-light text-[#f5ebe0] uppercase leading-none inline-flex items-center gap-2 sm:gap-4 justify-center flex-wrap">
           <span>about</span>
-          <span className="cursive-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-[#f5ebe0] lowercase">
+          <span className="cursive-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#f5ebe0] lowercase">
             me
           </span>
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         {/* Left Column: 3D Flip Portrait Card */}
         <div className="lg:col-span-5 flex justify-center">
-          <div className="card-flip-wrapper w-full max-w-xs sm:max-w-sm aspect-[4/5] cursor-pointer">
+          <div className="card-flip-wrapper w-full max-w-[280px] sm:max-w-xs md:max-w-sm aspect-[4/5] cursor-pointer">
             <div className="card-flip-inner relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/[0.08]">
               {/* Front Face */}
               <div className="card-face absolute inset-0 bg-[#0a0a0a] flex flex-col justify-end p-6">
