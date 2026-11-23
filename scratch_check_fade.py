@@ -1,7 +1,10 @@
+import urllib.request
 import re
 
-with open("scratch_ref.html", "r", encoding="utf-8") as f:
-    html = f.read()
+url = "https://judiemosinabre.dev/"
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req) as resp:
+    html = resp.read().decode('utf-8', errors='ignore')
 
 inline_scripts = re.findall(r'<script(?![^>]*src)[^>]*>(.*?)</script>', html, re.DOTALL)
 for s in inline_scripts:
@@ -9,9 +12,10 @@ for s in inline_scripts:
         print("=== INLINE SCRIPT FOR JOB TITLES ===")
         print(s)
 
-# Also check CSS for .fade
-with open("scratch_ref.css", "r", encoding="utf-8") as f:
-    css = f.read()
+css_url = "https://judiemosinabre.dev/styles.css"
+css_req = urllib.request.Request(css_url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(css_req) as cr:
+    css = cr.read().decode('utf-8', errors='ignore')
 
 print("=== CSS FOR .fade or #job-titles ===")
 for m in re.finditer(r'([^{}]*(?:\.fade|job-titles)[^{}]*\{[^}]+\})', css):
