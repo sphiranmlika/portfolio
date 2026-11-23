@@ -34,11 +34,6 @@ export function Hero({ onSelectTab }: HeroProps) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          {/* Top Intro */}
-          <span className="font-heading font-light text-base sm:text-lg tracking-[4px] uppercase text-[#f5ebe0]/60 mb-2">
-            Halo, saya {personalInfo.name}
-          </span>
-
           {/* Editorial Display Heading */}
           <h1 className="heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[3px] font-light text-[#f5ebe0] uppercase leading-none">
             welcome to my
@@ -66,16 +61,6 @@ export function Hero({ onSelectTab }: HeroProps) {
             ( {personalInfo.title} )
           </p>
         </motion.div>
-
-        {/* Concise Introduction */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="normal-text text-sm sm:text-base text-[#f5ebe0]/70 max-w-2xl mx-auto leading-relaxed pt-2"
-        >
-          {personalInfo.shortBio}
-        </motion.p>
 
         {/* Action Buttons: CV Download & Social Links */}
         <motion.div
