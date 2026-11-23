@@ -39,7 +39,7 @@ export function Hero() {
           className="flex flex-col items-center"
         >
           {/* Editorial Display Heading */}
-          <h1 className="heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[3px] font-light text-[#f5ebe0] lowercase leading-none">
+          <h1 className="heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[3px] font-light text-[#f5ebe0] uppercase leading-none">
             welcome to my
           </h1>
 
