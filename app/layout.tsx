@@ -59,15 +59,11 @@ export default function RootLayout({
     >
       <head />
       <body className="bg-[#050505] text-[#f5ebe0] font-sans antialiased min-h-screen selection:bg-[#7a0c12] selection:text-[#ffffff] relative overflow-x-hidden">
-        {/* Subtle moving ambient glow background */}
+        {/* Global subtle noise texture overlay matching judiemosinabre */}
         <div
           aria-hidden="true"
-          className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
-        >
-          <div className="ambient-glow ambient-glow-1" />
-          <div className="ambient-glow ambient-glow-2" />
-          <div className="noise-overlay" />
-        </div>
+          className="fixed inset-0 pointer-events-none z-0 overflow-hidden noise-overlay"
+        />
 
         {/* Main Content */}
         <div className="relative z-10 flex flex-col min-h-screen">

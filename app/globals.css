@@ -71,65 +71,102 @@
   }
 }
 
-/* Ambient glow background matching reference */
-.ambient-glow {
+/* =========================================================================
+   Hero & Section Ambient Background Glow (exact replica of judiemosinabre.dev)
+   Preserving custom rich burgundy, wine & black-rich palette
+   ========================================================================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--black-rich);
+}
+
+.hero::before {
+  content: "";
   position: absolute;
-  filter: blur(120px);
+  inset: -25%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+      ellipse at 25% 35%,
+      rgba(122, 12, 18, 0.7) 0%,
+      rgba(76, 5, 9, 0.45) 40%,
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse at 75% 65%,
+      rgba(100, 5, 15, 0.65) 0%,
+      rgba(201, 165, 90, 0.04) 50%,
+      transparent 68%
+    );
+  filter: blur(100px);
+  -webkit-filter: blur(100px);
+  mix-blend-mode: screen;
+  animation: moveGlow 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.025;
+  pointer-events: none;
+}
+
+@keyframes moveGlow {
+  0% {
+    transform: translate(0%, 0%) rotate(180deg);
+  }
+  50% {
+    transform: translate(25%, -15%) rotate(0deg);
+  }
+  100% {
+    transform: translate(0%, 0%) rotate(360deg);
+  }
+}
+
+/* Section Ambient Glows matching judiemosinabre */
+#experience {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#experience::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  z-index: 0;
+  background: radial-gradient(ellipse at 80% 20%, rgba(76, 5, 9, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(100, 8, 20, 0.18) 0%, transparent 50%);
+  filter: blur(80px);
+  -webkit-filter: blur(80px);
+  pointer-events: none;
+}
+
+#contact {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  z-index: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(122, 12, 18, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(100, 5, 15, 0.25) 0%, transparent 55%);
+  filter: blur(100px);
+  -webkit-filter: blur(100px);
   mix-blend-mode: screen;
   pointer-events: none;
-  opacity: 0.65;
-}
-
-.ambient-glow-1 {
-  top: -10%;
-  left: 15%;
-  width: 65vw;
-  height: 65vh;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(122, 12, 18, 0.45) 0%,
-    rgba(76, 5, 9, 0.25) 45%,
-    transparent 70%
-  );
-  animation: moveGlow1 24s ease-in-out infinite alternate;
-}
-
-.ambient-glow-2 {
-  bottom: 10%;
-  right: 10%;
-  width: 60vw;
-  height: 60vh;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(100, 5, 15, 0.4) 0%,
-    rgba(122, 12, 18, 0.15) 50%,
-    transparent 70%
-  );
-  animation: moveGlow2 28s ease-in-out infinite alternate;
-}
-
-@keyframes moveGlow1 {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(8%, -6%) rotate(90deg);
-  }
-  100% {
-    transform: translate(-5%, 8%) rotate(180deg);
-  }
-}
-
-@keyframes moveGlow2 {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(-10%, 10%) rotate(-90deg);
-  }
-  100% {
-    transform: translate(6%, -8%) rotate(-180deg);
-  }
 }
 
 /* SVG Noise Overlay */

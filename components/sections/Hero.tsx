@@ -28,10 +28,10 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[84vh] sm:min-h-[88vh] lg:min-h-[90vh] w-full flex flex-col justify-center items-center text-[#f5ebe0] px-6 sm:px-8 pt-28 sm:pt-32 pb-12 sm:pb-16 overflow-hidden"
+      className="hero relative min-h-[84vh] sm:min-h-[88vh] lg:min-h-[90vh] w-full flex flex-col justify-center items-center text-[#f5ebe0] px-6 sm:px-8 pt-28 sm:pt-32 pb-12 sm:pb-16 overflow-hidden"
     >
       {/* Central Hero Heading */}
-      <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto z-10">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
