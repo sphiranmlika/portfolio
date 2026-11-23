@@ -6,7 +6,7 @@ export const personalInfo: PersonalInfo = {
   title: "Software Engineer",
   tagline: "Software Engineer yang berfokus pada Mobile Development (Flutter), Modern Frontend, dan solusi cerdas berbasis AI.",
   shortBio:
-    "Software Engineer lulusan S1 Ilmu Komputer Institut Teknologi Bacharuddin Jusuf Habibie (IPK 3.73/4.00) dengan fokus pada rekayasa aplikasi mobile (Flutter), arsitektur web modern (React, Laravel, Next.js), serta pipeline data dan AI.",
+    "r lulusan S1 Ilmu Komputer Institut Teknologi Bacharuddin Jusuf Habibie (IPK 3.73/4.00) dengan fokus pada rekayasa aplikasi mobile (Flutter), arsitektur web modern (React, Laravel, Next.js), serta pipeline data dan AI.",
   fullBio: [
     "Saya adalah seorang Software Engineer lulusan S1 Ilmu Komputer dari Institut Teknologi Bacharuddin Jusuf Habibie (ITH) dengan IPK 3,73/4,00 dan fokus utama pada Software Engineering. Memiliki pengalaman mendalam dalam pengembangan aplikasi web dan mobile melalui program magang dan proyek pengembangan sistem produksi.",
     "Pengalaman profesional saya mencakup peran sebagai Junior Mobile Developer di OgiTech (mengembangkan aplikasi FarmTech OgiFarm dan teknologi pelestarian bahasa daerah Ogi'E), Data Analyst di Kantor Cabang Bulog Kota Parepare, Full Stack Developer & IT Support di Pengadilan Negeri Kota Parepare (merancang Sistem Informasi dan Pendaftaran Magang), serta Full Stack Developer di Diskominfo Kota Parepare (mengembangkan SPBE dengan React, Tailwind CSS, dan Laravel 12).",
