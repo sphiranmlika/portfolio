@@ -1,26 +1,252 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-tenor), "Tenor Sans", sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant", serif;
+  --font-heading: var(--font-cormorant), "Cormorant", serif;
+  --font-cursive: var(--font-monsieur), "Monsieur La Doulaise", cursive, serif;
+
+  --color-background: #050505;
+  --color-foreground: #f5ebe0;
+
+  --color-black-rich: #050505;
+  --color-black-dark: #0a0a0a;
+  --color-cream: #f5ebe0;
+  --color-cream-soft: #ede0d0;
+  --color-burgundy: #4c0509;
+  --color-burgundy-mid: #7a0c12;
+  --color-burgundy-light: rgba(76, 5, 9, 0.15);
+  --color-gray-subtle: #c8c8c8;
+  --color-gray-muted: rgba(200, 200, 200, 0.45);
+
+  --color-card: rgba(255, 255, 255, 0.03);
+  --color-card-foreground: #f5ebe0;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-primary: #7a0c12;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: rgba(255, 255, 255, 0.06);
+  --color-secondary-foreground: #f5ebe0;
+  --color-muted: rgba(255, 255, 255, 0.05);
+  --color-muted-foreground: rgba(245, 235, 224, 0.6);
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --cormorant: var(--font-cormorant), "Cormorant", serif;
+  --monsieur: var(--font-monsieur), "Monsieur La Doulaise", cursive, serif;
+  --tenor-sans: var(--font-tenor), "Tenor Sans", sans-serif;
+
+  --white: #ffffff;
+  --cream: #f5ebe0;
+  --cream-soft: #ede0d0;
+  --black: #0a0a0a;
+  --black-rich: #050505;
+  --burgundy: #4c0509;
+  --burgundy-mid: #7a0c12;
+  --burgundy-light: rgba(76, 5, 9, 0.15);
+  --gray: #c8c8c8;
+  --gray-muted: rgba(200, 200, 200, 0.45);
+}
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    background-color: #050505;
+    color: #f5ebe0;
+  }
+  body {
+    background-color: #050505;
+    color: #f5ebe0;
+    font-family: var(--font-tenor), "Tenor Sans", sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Ambient glow background matching reference */
+.ambient-glow {
+  position: absolute;
+  filter: blur(120px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.ambient-glow-1 {
+  top: -10%;
+  left: 15%;
+  width: 65vw;
+  height: 65vh;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(122, 12, 18, 0.45) 0%,
+    rgba(76, 5, 9, 0.25) 45%,
+    transparent 70%
+  );
+  animation: moveGlow1 24s ease-in-out infinite alternate;
+}
+
+.ambient-glow-2 {
+  bottom: 10%;
+  right: 10%;
+  width: 60vw;
+  height: 60vh;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(100, 5, 15, 0.4) 0%,
+    rgba(122, 12, 18, 0.15) 50%,
+    transparent 70%
+  );
+  animation: moveGlow2 28s ease-in-out infinite alternate;
+}
+
+@keyframes moveGlow1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(8%, -6%) rotate(90deg);
+  }
+  100% {
+    transform: translate(-5%, 8%) rotate(180deg);
+  }
+}
+
+@keyframes moveGlow2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10%, 10%) rotate(-90deg);
+  }
+  100% {
+    transform: translate(6%, -8%) rotate(-180deg);
+  }
+}
+
+/* SVG Noise Overlay */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.025;
+  pointer-events: none;
+}
+
+/* Typography Classes */
+.heading {
+  font-family: var(--font-cormorant), "Cormorant", serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.normal-text {
+  font-family: var(--font-tenor), "Tenor Sans", sans-serif;
+  line-height: 1.7;
+}
+
+.cursive-text {
+  font-family: var(--font-monsieur), "Monsieur La Doulaise", cursive, serif;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 0.85;
+}
+
+.cursive-text-form {
+  font-family: var(--font-monsieur), "Monsieur La Doulaise", cursive, serif;
+  font-weight: 400;
+  background: linear-gradient(135deg, #7a0c12, #ff6b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 0.85;
+}
+
+/* Navigation Link Underline Effect */
+.underline-hover {
+  position: relative;
+}
+
+.underline-hover::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: 4px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), var(--burgundy-mid));
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.underline-hover:hover::after,
+.underline-hover.active::after {
+  width: 100%;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 3D Flip Card Effect */
+.card-flip-wrapper {
+  perspective: 1000px;
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-flip-wrapper:hover .card-flip-inner {
+  transform: translateY(-8px) rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Pulse animation for Current Experience dot */
+@keyframes pulseDot {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(76, 5, 9, 0.3), 0 0 16px rgba(196, 30, 74, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(76, 5, 9, 0.4), 0 0 24px rgba(196, 30, 74, 0.7);
+  }
+}
+
+.current-pulse-dot {
+  animation: pulseDot 2.4s ease-in-out infinite;
 }

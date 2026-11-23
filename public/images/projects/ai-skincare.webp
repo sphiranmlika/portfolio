@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#541A1A"/>
+      <stop offset="100%" stop-color="#810B38"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="400" cy="200" r="110" fill="#F1E2D1" opacity="0.1"/>
+  <rect x="330" y="110" width="140" height="240" rx="24" fill="#F1E2D1" stroke="#DCC3AA" stroke-width="4"/>
+  <rect x="345" y="130" width="110" height="170" rx="8" fill="#541A1A"/>
+  <circle cx="400" cy="180" r="28" fill="#810B38"/>
+  <path d="M375 240 C375 220, 425 220, 425 240 Z" fill="#DCC3AA"/>
+  <rect x="360" y="260" width="80" height="12" rx="4" fill="#810B38"/>
+  <circle cx="400" cy="325" r="10" fill="#541A1A"/>
+  <text x="400" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F1E2D1">Sistem Absensi Siswa Mobile</text>
+  <text x="400" y="435" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#DCC3AA">Flutter • Geofencing • Biometric Validation</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCC3AA"/>
+      <stop offset="50%" stop-color="#FAF4ED"/>
+      <stop offset="100%" stop-color="#DCC3AA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#810B38" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#541A1A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#avatarBg)"/>
+  <circle cx="250" cy="250" r="230" fill="url(#glow)"/>
+  <circle cx="250" cy="200" r="80" fill="#541A1A"/>
+  <path d="M110 420 C130 310, 370 310, 390 420 Z" fill="#810B38"/>
+  <circle cx="250" cy="200" r="70" fill="#FAF4ED"/>
+  <!-- Glasses / smart aesthetic -->
+  <rect x="205" y="185" width="35" height="24" rx="6" fill="none" stroke="#541A1A" stroke-width="4"/>
+  <rect x="260" y="185" width="35" height="24" rx="6" fill="none" stroke="#541A1A" stroke-width="4"/>
+  <line x1="240" y1="197" x2="260" y2="197" stroke="#541A1A" stroke-width="4"/>
+  <path d="M225 235 Q250 255 275 235" stroke="#541A1A" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

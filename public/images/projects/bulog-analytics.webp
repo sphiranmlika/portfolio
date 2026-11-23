@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B1212"/>
+      <stop offset="100%" stop-color="#810B38"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg4)"/>
+  <rect x="200" y="100" width="400" height="240" rx="12" fill="#FAF4ED" stroke="#DCC3AA" stroke-width="4"/>
+  <rect x="240" y="240" width="35" height="70" rx="4" fill="#810B38"/>
+  <rect x="290" y="200" width="35" height="110" rx="4" fill="#DCC3AA"/>
+  <rect x="340" y="160" width="35" height="150" rx="4" fill="#810B38"/>
+  <rect x="390" y="220" width="35" height="90" rx="4" fill="#541A1A"/>
+  <rect x="440" y="180" width="35" height="130" rx="4" fill="#810B38"/>
+  <rect x="490" y="140" width="35" height="170" rx="4" fill="#DCC3AA"/>
+  <text x="400" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F1E2D1">Food Aid Data Processing Pipeline</text>
+  <text x="400" y="435" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#DCC3AA">Python • Pandas • Data Validation • Bulog</text>
+</svg>

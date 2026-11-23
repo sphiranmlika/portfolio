@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B1212"/>
+      <stop offset="100%" stop-color="#541A1A"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg2)"/>
+  <rect x="180" y="100" width="440" height="250" rx="12" fill="#FAF4ED" stroke="#DCC3AA" stroke-width="4"/>
+  <rect x="180" y="100" width="440" height="40" rx="12" fill="#DCC3AA"/>
+  <circle cx="210" cy="120" r="6" fill="#810B38"/>
+  <circle cx="230" cy="120" r="6" fill="#810B38" opacity="0.6"/>
+  <circle cx="250" cy="120" r="6" fill="#810B38" opacity="0.3"/>
+  <rect x="210" y="165" width="160" height="18" rx="4" fill="#810B38"/>
+  <rect x="210" y="195" width="220" height="10" rx="3" fill="#DCC3AA"/>
+  <rect x="210" y="215" width="190" height="10" rx="3" fill="#DCC3AA"/>
+  <rect x="420" y="165" width="170" height="120" rx="8" fill="#F1E2D1"/>
+  <text x="400" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#F1E2D1">Diskominfo Public Service Portal</text>
+  <text x="400" y="435" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#DCC3AA">Next.js • React • TypeScript • PostgreSQL</text>
+</svg>
