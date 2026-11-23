@@ -44,9 +44,6 @@ export function Hero({ onSelectTab }: HeroProps) {
             <span className="cursive-text text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] leading-[0.75] py-2 text-[#f5ebe0]">
               portfolio
             </span>
-            <span className="font-heading font-light text-xs sm:text-sm md:text-base tracking-[2px] text-[#f5ebe0]/60 absolute -top-1 -right-6 sm:-right-8">
-              &apos;26
-            </span>
           </div>
         </motion.div>
 
