@@ -4,20 +4,20 @@ export const personalInfo = {
   title: "Software Engineer",
   tagline: "Software Engineer yang berfokus pada Mobile Development (Flutter), Modern Frontend, dan solusi cerdas berbasis AI.",
   shortBio:
-    "Software Engineer dengan spesialisasi dalam pengembangan aplikasi mobile lintas platform (Flutter), arsitektur web modern, serta implementasi computer vision. Berkomitmen membangun produk digital yang andal, efisien, dan berorientasi pada pengalaman pengguna.",
+    "Software Engineer lulusan S1 Ilmu Komputer Institut Teknologi Bacharuddin Jusuf Habibie (IPK 3.73/4.00) dengan fokus pada rekayasa aplikasi mobile (Flutter), arsitektur web modern (React, Laravel, Next.js), serta pipeline data dan AI.",
   fullBio: [
-    "Saya adalah seorang Software Engineer dan mahasiswa Ilmu Komputer di Institut Teknologi Bacharuddin Jusuf Habibie (2022–2026) dengan pencapaian akademik yang konsisten (IPK: 3.73). Fokus rekayasa saya berpusat pada pengembangan aplikasi mobile modern dengan Flutter, arsitektur web berbasis React & Next.js, serta pipeline kecerdasan buatan terapan.",
-    "Melalui pengalaman kerja profesional di OgiTech sebagai Junior Mobile Developer serta pengalaman teknis di instansi pemerintahan (Diskominfo Kota Parepare, Pengadilan Negeri Kota Parepare, dan Perum Bulog), saya telah merancang berbagai sistem digital — mulai dari aplikasi FarmTech, preservasi bahasa daerah, sistem presensi dengan validasi multi-faktor geofencing, hingga pipeline audit data skala besar.",
-    "Saya memiliki antusiasme mendalam terhadap pemecahan masalah nyata melalui teknologi: menggabungkan keandalan kode, struktur data yang rapi, dan desain antarmuka editorial yang bersih.",
+    "Saya adalah seorang Software Engineer lulusan S1 Ilmu Komputer dari Institut Teknologi Bacharuddin Jusuf Habibie (ITH) dengan IPK 3,73/4,00 dan fokus utama pada Software Engineering. Memiliki pengalaman mendalam dalam pengembangan aplikasi web dan mobile melalui program magang dan proyek pengembangan sistem produksi.",
+    "Pengalaman profesional saya mencakup peran sebagai Junior Mobile Developer di OgiTech (mengembangkan aplikasi FarmTech OgiFarm dan teknologi pelestarian bahasa daerah Ogi'E), Data Analyst di Kantor Cabang Bulog Kota Parepare, Full Stack Developer & IT Support di Pengadilan Negeri Kota Parepare (merancang Sistem Informasi dan Pendaftaran Magang), serta Full Stack Developer di Diskominfo Kota Parepare (mengembangkan SPBE dengan React, Tailwind CSS, dan Laravel 12).",
+    "Saya berpengalaman menggunakan Flutter, Dart, React.js, PHP, Laravel, Python, OpenCV, dan MySQL dalam pengembangan solusi perangkat lunak. Terbiasa dengan arsitektur bersih, version control Git/GitHub, dan perancangan antarmuka berpusat pada pengguna menggunakan Figma.",
   ],
   developmentPhilosophy: [
     {
       title: "User-Centric & Purposeful",
-      description: "Teknologi harus dirancang untuk memecahkan kebutuhan nyata manusia dengan antarmuka yang intuitif dan interaksi yang menyenangkan.",
+      description: "Teknologi harus dirancang untuk memecahkan kebutuhan nyata manusia dengan antarmuka yang intuitif dan alur interaksi yang efisien.",
     },
     {
       title: "Clean & Maintainable Architecture",
-      description: "Menerapkan prinsip arsitektur modular, pengetikan ketat, dan separation of concerns untuk memastikan aplikasi mudah dirawat dan dikembangkan.",
+      description: "Menerapkan prinsip arsitektur modular, Agile development, dan validasi data ketat untuk memastikan skalabilitas dan keandalan sistem.",
     },
     {
       title: "Continuous Innovation",
@@ -25,17 +25,19 @@ export const personalInfo = {
     },
   ],
   goals: [
-    "Membangun aplikasi mobile dan web berkinerja tinggi yang memberikan dampak positif nyata bagi pengguna.",
-    "Memperdalam riset dan implementasi sistem kecerdasan buatan, deteksi objek, dan model on-device inference.",
-    "Berkontribusi dalam inisiatif digitalisasi publik, teknologi bahasa lokal, dan proyek rekayasa perangkat lunak open-source.",
+    "Membangun aplikasi mobile dan web berkinerja tinggi yang memberikan dampak positif nyata bagi operasional masyarakat dan institusi.",
+    "Mengembangkan riset dan implementasi sistem kecerdasan buatan, computer vision, serta keamanan autentikasi multi-faktor.",
+    "Berkontribusi aktif dalam inisiatif digitalisasi publik, teknologi bahasa lokal, dan proyek rekayasa perangkat lunak berskala besar.",
   ],
-  email: "saphiranurmalikaa@gmail.com",
+  email: "saphiranurmalika@gmail.com",
+  phone: "+62 89509421941",
   location: "Parepare, Sulawesi Selatan, Indonesia",
   status: "Terbuka untuk Peluang Kerja & Kolaborasi",
   socials: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
-    email: "mailto:saphiranurmalikaa@gmail.com",
+    email: "mailto:saphiranurmalika@gmail.com",
   },
-  cvUrl: "/documents/cv.pdf",
+  cvUrl: "https://drive.google.com/file/d/1smIpB05ROLd3rWErKGWftLzISgIgIeUF/view?usp=sharing",
+  localCvUrl: "/documents/cv.pdf",
 };
