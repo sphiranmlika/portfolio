@@ -19,7 +19,7 @@ export const certificates: Certificate[] = [
   },
   {
     id: "cert-2",
-    title: "Frontend Web Developer Professional Certificate",
+    title: "Frontend Web Developer Certificate",
     issuer: "Google / Coursera",
     category: "Programming & Software Development",
     issueDate: "2024",
