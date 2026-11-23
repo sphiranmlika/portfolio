@@ -89,27 +89,22 @@
 .hero::before {
   content: "";
   position: absolute;
-  inset: -12%;
+  inset: -25%;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
-      ellipse 42% 38% at 35% 38%,
-      rgba(122, 12, 18, 0.65) 0%,
-      rgba(76, 5, 9, 0.36) 30%,
-      transparent 58%
-    ),
-    radial-gradient(
-      ellipse 38% 35% at 65% 62%,
-      rgba(100, 5, 15, 0.55) 0%,
-      rgba(201, 165, 90, 0.03) 28%,
-      transparent 54%
-    );
-  filter: blur(85px);
-  -webkit-filter: blur(85px);
+  background: radial-gradient(ellipse at 25% 35%,
+      rgba(122, 12, 18, 0.7) 0%,
+      rgba(76, 5, 9, 0.45) 40%,
+      transparent 68%),
+    radial-gradient(ellipse at 75% 65%,
+      rgba(100, 5, 15, 0.65) 0%,
+      rgba(201, 165, 90, 0.04) 50%,
+      transparent 68%);
+  filter: blur(100px);
+  -webkit-filter: blur(100px);
   mix-blend-mode: screen;
-  animation: moveGlowSmooth 30s ease-in-out infinite alternate;
+  animation: moveGlow 22s ease-in-out infinite alternate;
   will-change: transform;
-  transform-origin: center center;
 }
 
 .hero::after {
@@ -124,23 +119,17 @@
   pointer-events: none;
 }
 
-@keyframes moveGlowSmooth {
+@keyframes moveGlow {
   0% {
-    transform: translate3d(0%, 0%, 0) rotate(0deg) scale(1);
-  }
-  25% {
-    transform: translate3d(5%, -4%, 0) rotate(45deg) scale(1.05);
+    transform: translate(0%, 0%) rotate(180deg);
   }
 
   50% {
-    transform: translate3d(-4%, 5%, 0) rotate(90deg) scale(0.97);
-  }
-  75% {
-    transform: translate3d(4%, 3%, 0) rotate(135deg) scale(1.03);
+    transform: translate(25%, -15%) rotate(0deg);
   }
 
   100% {
-    transform: translate3d(0%, 0%, 0) rotate(180deg) scale(1);
+    transform: translate(0%, 0%) rotate(360deg);
   }
 }
 

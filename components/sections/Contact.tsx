@@ -27,14 +27,14 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-36 relative max-w-4xl mx-auto px-4 sm:px-8 lg:px-12">
+    <section id="contact" className="py-24 sm:py-36 relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
       {/* Big Editorial Headline matching reference */}
-      <div className="text-center mb-10 sm:mb-16">
-        <h2 className="heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[2px] font-light text-[#f5ebe0] uppercase leading-none">
+      <div className="text-center mb-12 sm:mb-16">
+        <h2 className="heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[2px] font-light text-[#f5ebe0] uppercase leading-none">
           want to turn ideas into
         </h2>
-        <div className="py-1 sm:py-2">
-          <span className="cursive-text text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#ffffff] lowercase">
+        <div className="py-2">
+          <span className="cursive-text text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] text-[#ffffff] lowercase">
             reality?
           </span>
         </div>
