@@ -38,25 +38,25 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          {/* Editorial Display Heading - lowercase and smaller size */}
-          <h1 className="heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-[3px] sm:tracking-[4px] font-light text-[#f5ebe0] lowercase leading-none">
+          {/* Editorial Display Heading */}
+          <h1 className="heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[3px] font-light text-[#f5ebe0] uppercase leading-none">
             welcome to my
           </h1>
 
-          {/* Expressive Cursive Text - smaller size */}
-          <div className="relative inline-flex items-center justify-center mt-1 sm:mt-2 mb-2 sm:mb-3">
-            <span className="cursive-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.85] py-2 text-[#f5ebe0]">
+          {/* Expressive Cursive Text */}
+          <div className="relative inline-flex items-center justify-center mt-1 sm:mt-2 mb-2 sm:mb-4">
+            <span className="cursive-text text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] leading-[0.8] py-2 text-[#f5ebe0]">
               portfolio
             </span>
           </div>
         </motion.div>
 
-        {/* Action Buttons: CV Download & Social Links - space between portfolio & buttons */}
+        {/* Action Buttons: CV Download & Social Links */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-4 mt-8 sm:mt-10 md:mt-12"
+          className="flex flex-wrap items-center justify-center gap-4 pt-8 sm:pt-12 md:pt-14"
         >
           {/* Download CV */}
           <a
@@ -92,12 +92,12 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Rotating Job Titles - space from buttons & no clipping */}
+        {/* Rotating Job Titles positioned below buttons */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
-          className="mt-8 sm:mt-10 md:mt-12 min-h-[48px] py-1 flex items-center justify-center relative"
+          className="pt-6 sm:pt-8 h-12 flex items-center justify-center relative overflow-hidden"
         >
           <AnimatePresence mode="wait">
             <motion.span
@@ -109,7 +109,7 @@ export function Hero() {
                 duration: 0.5,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="normal-text text-base sm:text-lg md:text-xl text-[#f5ebe0]/90 tracking-[2px] select-none inline-block text-center leading-normal pb-1"
+              className="normal-text text-lg sm:text-xl md:text-2xl text-[#f5ebe0]/90 tracking-[2px] select-none inline-block text-center"
             >
               {positions[titleIndex]}
             </motion.span>
