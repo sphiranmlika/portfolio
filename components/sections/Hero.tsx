@@ -43,9 +43,9 @@ export function Hero() {
             welcome to my
           </h1>
 
-          {/* Expressive Cursive Text - elegant impactful scale */}
+          {/* Expressive Cursive Text - slightly reduced scale */}
           <div className="relative inline-flex items-center justify-center mt-1 sm:mt-2 mb-2 sm:mb-4 max-w-full">
-            <span className="cursive-text text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.8] py-2 text-[#f5ebe0] break-words">
+            <span className="cursive-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.8] py-2 text-[#f5ebe0] break-words">
               portfolio
             </span>
           </div>
