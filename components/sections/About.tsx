@@ -8,6 +8,19 @@ import { personalInfo } from "@/data/personal";
 import { skillCategories } from "@/data/skills";
 import { certificates } from "@/data/certificates";
 
+const profilePhotos = [
+  {
+    src: "/images/profile/portrait.webp",
+    alt: `${personalInfo.name} Portrait`,
+    label: "Portrait",
+  },
+  {
+    src: "/images/profile/portrait-sunset.webp",
+    alt: `${personalInfo.name} Sunset`,
+    label: "Sunset",
+  },
+];
+
 interface AboutProps {
   activeTab?: "about" | "skills" | "cert";
   onTabChange?: (tab: "about" | "skills" | "cert") => void;
@@ -16,6 +29,8 @@ interface AboutProps {
 export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
   const [internalTab, setInternalTab] = useState<"about" | "skills" | "cert">("about");
   const currentTab = controlledTab ?? internalTab;
+  const [photoIndex, setPhotoIndex] = useState<number>(0);
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
   const handleTabClick = (tab: "about" | "skills" | "cert") => {
     if (onTabChange) {
@@ -40,32 +55,88 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column: 3D Flip Portrait Card */}
         <div className="lg:col-span-5 flex justify-center">
-          <div className="card-flip-wrapper w-full max-w-xs sm:max-w-sm aspect-[4/5] cursor-pointer">
+          <div
+            className={`card-flip-wrapper w-full max-w-xs sm:max-w-sm aspect-[4/5] cursor-pointer ${
+              isFlipped ? "is-flipped" : ""
+            }`}
+            onClick={() => setIsFlipped((prev) => !prev)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setIsFlipped((prev) => !prev);
+              }
+            }}
+            aria-label="Kartu profil interaktif, klik untuk membalik"
+          >
             <div className="card-flip-inner relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/[0.08]">
               {/* Front Face */}
               <div className="card-face absolute inset-0 bg-[#0a0a0a] flex flex-col justify-end p-6">
                 <Image
-                  src="/images/profile/portrait.webp"
-                  alt={personalInfo.name}
+                  src={profilePhotos[photoIndex].src}
+                  alt={profilePhotos[photoIndex].alt}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center transition-all duration-700 ease-out"
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
-                <div className="relative z-10 text-left">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-90 pointer-events-none" />
+
+                {/* Flip Hint */}
+                <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/[0.08] text-[9px] font-sans tracking-[1.5px] uppercase text-[#f5ebe0]/70 pointer-events-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c41e4a] animate-pulse" />
+                  <span>Tap to flip</span>
+                </div>
+
+                {/* Photo Switcher */}
+                <div
+                  className="absolute top-4 right-4 z-20 flex items-center gap-1 p-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 shadow-lg"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {profilePhotos.map((photo, idx) => (
+                    <button
+                      key={photo.src}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setPhotoIndex(idx);
+                      }}
+                      className={`px-2.5 py-1 rounded-full text-[10px] font-sans tracking-[1px] uppercase transition-all duration-300 ${
+                        photoIndex === idx
+                          ? "bg-white text-black font-semibold shadow-sm"
+                          : "text-[#f5ebe0]/60 hover:text-[#f5ebe0] hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      {photo.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="relative z-10 text-left pointer-events-none">
                   <p className="font-heading font-light text-xl text-[#f5ebe0] tracking-[1px]">
                     {personalInfo.name}
                   </p>
-                  <p className="font-sans text-xs text-[#f5ebe0]/60 tracking-[1.5px] uppercase">
+                  <p className="font-sans text-xs text-[#f5ebe0]/60 tracking-[1.5px] uppercase mt-0.5">
                     {personalInfo.title}
                   </p>
                 </div>
               </div>
 
               {/* Back Face */}
-              <div className="card-face card-back absolute inset-0 bg-gradient-to-br from-[#120306] via-[#050505] to-[#1a050b] p-8 flex flex-col justify-between border border-white/[0.12] text-left">
-                <div>
+              <div className="card-face card-back absolute inset-0 bg-[#0a0a0a] p-8 flex flex-col justify-between border border-white/[0.12] text-left overflow-hidden">
+                {/* Ambient photo backdrop on card back */}
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                  <Image
+                    src={profilePhotos[photoIndex === 0 ? 1 : 0].src}
+                    alt=""
+                    fill
+                    className="object-cover opacity-20 filter blur-sm scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#120306]/95 via-[#050505]/90 to-[#1a050b]/95" />
+                </div>
+
+                <div className="relative z-10">
                   <span className="font-cursive text-4xl text-[#f5ebe0]/80">
                     passion & code
                   </span>
@@ -75,7 +146,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                   </p>
                 </div>
 
-                <div className="space-y-2 pt-6 border-t border-white/[0.08] text-xs text-[#f5ebe0]/60">
+                <div className="relative z-10 space-y-2 pt-6 border-t border-white/[0.08] text-xs text-[#f5ebe0]/60">
                   <p>
                     <strong className="text-[#f5ebe0]">Pendidikan:</strong> Teknik Informatika (IPK 3.73)
                   </p>

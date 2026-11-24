@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AboutPortraitCard } from "@/components/about/AboutPortraitCard";
 import { personalInfo } from "@/data/personal";
 import { educations } from "@/data/education";
 
@@ -83,18 +84,7 @@ export default function AboutPage() {
         {/* Narrative & Portrait Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center pb-20 border-b border-white/[0.08]">
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-64 sm:w-80 lg:w-full max-w-sm aspect-[4/5] rounded-3xl bg-[#0a0a0a] border border-white/[0.08] p-3 shadow-2xl overflow-hidden">
-              <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/profile/portrait.webp"
-                  alt={`Potret ${personalInfo.name}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 300px, 380px"
-                  priority
-                />
-              </div>
-            </div>
+            <AboutPortraitCard />
           </div>
 
           <div className="lg:col-span-7 space-y-6">
