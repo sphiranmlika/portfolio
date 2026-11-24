@@ -98,33 +98,30 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
             <button
               type="button"
               onClick={() => handleTabClick("about")}
-              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
-                currentTab === "about"
-                  ? "bg-white/[0.09] text-white font-medium shadow-sm"
-                  : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
-              }`}
+              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${currentTab === "about"
+                ? "bg-white/[0.09] text-white font-medium shadow-sm"
+                : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
+                }`}
             >
               about me
             </button>
             <button
               type="button"
               onClick={() => handleTabClick("skills")}
-              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
-                currentTab === "skills"
-                  ? "bg-white/[0.09] text-white font-medium shadow-sm"
-                  : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
-              }`}
+              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${currentTab === "skills"
+                ? "bg-white/[0.09] text-white font-medium shadow-sm"
+                : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
+                }`}
             >
               skills
             </button>
             <button
               type="button"
               onClick={() => handleTabClick("cert")}
-              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${
-                currentTab === "cert"
-                  ? "bg-white/[0.09] text-white font-medium shadow-sm"
-                  : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
-              }`}
+              className={`px-5 py-2.5 rounded-xl font-sans text-xs sm:text-sm tracking-[1.5px] uppercase transition-all duration-300 cursor-pointer ${currentTab === "cert"
+                ? "bg-white/[0.09] text-white font-medium shadow-sm"
+                : "text-[#f5ebe0]/50 hover:text-[#f5ebe0] hover:bg-white/[0.04]"
+                }`}
             >
               certifications
             </button>
