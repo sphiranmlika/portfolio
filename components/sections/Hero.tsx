@@ -36,16 +36,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center justify-center gap-2 sm:gap-4 md:gap-5 w-full"
+          className="flex flex-col items-center justify-center gap-1.5 sm:gap-3 md:gap-4 w-full"
         >
-          {/* Editorial Display Heading - persis ukuran judiemosinabre */}
-          <h1 className="heading text-[3.2rem] xs:text-[3.8rem] sm:text-[4.8rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[9rem] tracking-[3px] sm:tracking-[4px] font-light text-[#f5ebe0] lowercase leading-none select-none">
+          {/* Editorial Display Heading - diperkecil sedikit */}
+          <h1 className="heading text-[2.6rem] sm:text-[3.6rem] md:text-[4.6rem] lg:text-[5.6rem] xl:text-[6.8rem] tracking-[2.5px] sm:tracking-[3.5px] font-light text-[#f5ebe0] lowercase leading-none select-none">
             welcome to my
           </h1>
 
-          {/* Expressive Cursive Text - persis ukuran judiemosinabre */}
+          {/* Expressive Cursive Text - diperkecil sedikit */}
           <div className="relative inline-flex items-center justify-center max-w-full">
-            <span className="cursive-text text-[4.2rem] xs:text-[4.8rem] sm:text-[5.8rem] md:text-[7.5rem] lg:text-[9rem] xl:text-[11rem] leading-[0.7] sm:leading-[0.6] py-1 text-[#f5ebe0] break-words select-none">
+            <span className="cursive-text text-[3.6rem] sm:text-[4.8rem] md:text-[6.2rem] lg:text-[7.4rem] xl:text-[8.5rem] leading-[0.75] py-1 text-[#f5ebe0] break-words select-none">
               portfolio
             </span>
           </div>
