@@ -142,16 +142,6 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                 dan efisiensi teknologi. Saya tidak hanya menunggu peluang; saya merancang dan
                 membangunnya.
               </p>
-
-              <div className="pt-4">
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[2px] font-sans text-[#f5ebe0] hover:text-white group border-b border-[#7a0c12] pb-1"
-                >
-                  <span>Baca Selengkapnya Tentang Saya</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-[#7a0c12]" />
-                </Link>
-              </div>
             </div>
           )}
 
