@@ -59,7 +59,6 @@ export function AboutPortraitCard() {
             unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent opacity-85 pointer-events-none" />
-
         </div>
       </div>
     </div>
