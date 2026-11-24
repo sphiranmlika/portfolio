@@ -31,21 +31,21 @@ export function Hero() {
       className="hero relative min-h-screen min-h-[100dvh] w-full flex flex-col justify-center items-center text-[#f5ebe0] px-4 sm:px-8 pt-20 pb-12 overflow-hidden"
     >
       {/* Central Hero Heading */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-4xl mx-auto w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-5xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center w-full"
+          className="flex flex-col items-center justify-center gap-2 sm:gap-4 md:gap-5 w-full"
         >
-          {/* Editorial Display Heading - lowercase and medium-large scale */}
-          <h1 className="heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[2.5px] sm:tracking-[3.5px] font-light text-[#f5ebe0] lowercase leading-none">
+          {/* Editorial Display Heading - persis ukuran judiemosinabre */}
+          <h1 className="heading text-[3.2rem] xs:text-[3.8rem] sm:text-[4.8rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[9rem] tracking-[3px] sm:tracking-[4px] font-light text-[#f5ebe0] lowercase leading-none select-none">
             welcome to my
           </h1>
 
-          {/* Expressive Cursive Text - slightly reduced scale */}
-          <div className="relative inline-flex items-center justify-center mt-1 sm:mt-2 mb-2 sm:mb-4 max-w-full">
-            <span className="cursive-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.8] py-2 text-[#f5ebe0] break-words">
+          {/* Expressive Cursive Text - persis ukuran judiemosinabre */}
+          <div className="relative inline-flex items-center justify-center max-w-full">
+            <span className="cursive-text text-[4.2rem] xs:text-[4.8rem] sm:text-[5.8rem] md:text-[7.5rem] lg:text-[9rem] xl:text-[11rem] leading-[0.7] sm:leading-[0.6] py-1 text-[#f5ebe0] break-words select-none">
               portfolio
             </span>
           </div>
@@ -56,7 +56,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-4 mt-8 sm:mt-10 md:mt-12"
+          className="flex flex-wrap items-center justify-center gap-4 mt-8 sm:mt-12 md:mt-14"
         >
           {/* Download CV */}
           <a
@@ -92,12 +92,12 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Rotating Job Titles */}
+        {/* Rotating Job Titles - persis ukuran font & jarak judiemosinabre */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55, ease: "easeOut" }}
-          className="mt-12 sm:mt-16 md:mt-20 min-h-[48px] py-1 flex items-center justify-center relative w-full px-2"
+          className="mt-8 sm:mt-12 md:mt-14 min-h-[48px] py-1 flex items-center justify-center relative w-full px-2"
         >
           <AnimatePresence mode="wait">
             <motion.span
@@ -109,7 +109,7 @@ export function Hero() {
                 duration: 0.5,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="normal-text text-base sm:text-lg md:text-xl lg:text-2xl text-[#f5ebe0]/90 tracking-[2px] select-none inline-block text-center leading-normal pb-1 max-w-full"
+              className="normal-text text-[1.25rem] sm:text-[1.5rem] md:text-[1.8rem] xl:text-[1.9rem] text-[#f5ebe0]/90 tracking-[2px] select-none inline-block text-center leading-normal pb-1 max-w-full"
             >
               {positions[titleIndex]}
             </motion.span>
