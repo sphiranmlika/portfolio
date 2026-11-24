@@ -38,30 +38,27 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="hero-heading w-full"
         >
-          {/* Editorial Display Heading with Floating 2026 */}
+          {/* Editorial Display Heading */}
           <div className="relative inline-flex items-center justify-center">
             <h1 className="hero-title">
               welcome to my
             </h1>
-            <span className="hero-year">
-              2026
-            </span>
           </div>
 
           {/* Expressive Cursive Text */}
-          <div className="relative inline-flex items-center justify-center max-w-full">
+          <div className="relative inline-flex items-center justify-center max-w-full pb-2">
             <span className="hero-cursive break-words">
               portfolio
             </span>
           </div>
         </motion.div>
 
-        {/* Action Buttons: CV Download & Social Links */}
+        {/* Action Buttons: CV Download & Social Links - diturunkan agar tidak mepet */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
-          className="flex flex-wrap items-center justify-center gap-4 mt-8 sm:mt-10 md:mt-12"
+          className="flex flex-wrap items-center justify-center gap-4 mt-14 sm:mt-18 md:mt-22 lg:mt-24"
         >
           {/* Download CV */}
           <a
