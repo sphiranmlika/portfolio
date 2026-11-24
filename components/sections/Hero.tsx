@@ -109,7 +109,7 @@ export function Hero() {
                 duration: 0.5,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className="normal-text text-[1.1rem] sm:text-[1.3rem] md:text-[1.5rem] xl:text-[1.50rem] text-[#f5ebe0]/90 tracking-[2px] select-none inline-block text-center leading-normal pb-1 max-w-full"
+              className="normal-text text-[1.1rem] sm:text-[1.3rem] md:text-[1.5rem] xl:text-[1.45rem] text-[#f5ebe0]/90 tracking-[2px] select-none inline-block text-center leading-normal pb-1 max-w-full"
             >
               {positions[titleIndex]}
             </motion.span>
