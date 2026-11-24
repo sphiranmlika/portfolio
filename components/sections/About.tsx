@@ -56,9 +56,9 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
             }}
             aria-label="Kartu profil interaktif, klik untuk membalik"
           >
-            <div className="card-flip-inner relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/[0.08]">
-              {/* Front Face: Flip Pertama (Portrait Selfie HD) */}
-              <div className="card-face absolute inset-0 bg-[#0a0a0a] flex flex-col justify-end p-6 select-none">
+            <div className="card-flip-inner relative w-full h-full">
+              {/* Front Face: Flip Pertama (Foto 1 - Portrait Selfie HD) */}
+              <div className="card-face absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0a0a0a] flex flex-col justify-end p-6 select-none shadow-2xl">
                 <Image
                   src="/images/profile/portrait.webp"
                   alt={`Potret ${personalInfo.name}`}
@@ -68,7 +68,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                   priority
                   unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/30 to-transparent opacity-90 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent opacity-85 pointer-events-none" />
 
                 <div className="relative z-10 text-left pointer-events-none">
                   <p className="font-heading font-light text-xl text-[#f5ebe0] tracking-[1px]">
@@ -80,8 +80,8 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                 </div>
               </div>
 
-              {/* Back Face: Flip Kedua (Sunset Outdoor HD) */}
-              <div className="card-face card-back absolute inset-0 bg-[#0a0a0a] flex flex-col justify-end p-6 border border-white/[0.12] text-left overflow-hidden select-none">
+              {/* Back Face: Flip Kedua (Foto 2 - Sunset Outdoor HD) */}
+              <div className="card-face card-back absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.12] bg-[#0a0a0a] flex flex-col justify-end p-6 select-none shadow-2xl">
                 <Image
                   src="/images/profile/portrait-sunset.webp"
                   alt={`${personalInfo.name} Sunset`}
@@ -91,31 +91,15 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                   priority
                   unoptimized
                 />
-                {/* Subtle gradient overlay so photo remains clear in HD and text is legible */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/75 to-transparent/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent opacity-85 pointer-events-none" />
 
-                <div className="relative z-10 space-y-3 pointer-events-none">
-                  <div>
-                    <span className="font-cursive text-3xl sm:text-4xl text-[#f5ebe0]">
-                      passion & code
-                    </span>
-                    <p className="normal-text text-xs sm:text-sm text-[#f5ebe0]/90 mt-1.5 leading-relaxed">
-                      &quot;Membangun perangkat lunak yang andal, indah, dan bermanfaat
-                      melalui rekayasa yang disiplin dan desain editorial yang elegan.&quot;
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-white/[0.15] text-xs text-[#f5ebe0]/80 space-y-1">
-                    <p>
-                      <strong className="text-[#f5ebe0]">Pendidikan:</strong> Teknik Informatika (IPK 3.73)
-                    </p>
-                    <p>
-                      <strong className="text-[#f5ebe0]">Fokus:</strong> Flutter, Next.js, AI & Computer Vision
-                    </p>
-                    <p>
-                      <strong className="text-[#f5ebe0]">Status:</strong> {personalInfo.status}
-                    </p>
-                  </div>
+                <div className="relative z-10 text-left pointer-events-none">
+                  <p className="font-heading font-light text-xl text-[#f5ebe0] tracking-[1px]">
+                    {personalInfo.name}
+                  </p>
+                  <p className="font-sans text-xs text-[#f5ebe0]/70 tracking-[1.5px] uppercase mt-0.5">
+                    ( passion & code )
+                  </p>
                 </div>
               </div>
             </div>
