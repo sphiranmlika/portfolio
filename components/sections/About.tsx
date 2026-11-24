@@ -8,19 +8,6 @@ import { personalInfo } from "@/data/personal";
 import { skillCategories } from "@/data/skills";
 import { certificates } from "@/data/certificates";
 
-const profilePhotos = [
-  {
-    src: "/images/profile/portrait.webp",
-    alt: `${personalInfo.name} Portrait`,
-    label: "Portrait",
-  },
-  {
-    src: "/images/profile/portrait-sunset.webp",
-    alt: `${personalInfo.name} Sunset`,
-    label: "Sunset",
-  },
-];
-
 interface AboutProps {
   activeTab?: "about" | "skills" | "cert";
   onTabChange?: (tab: "about" | "skills" | "cert") => void;
@@ -29,7 +16,6 @@ interface AboutProps {
 export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
   const [internalTab, setInternalTab] = useState<"about" | "skills" | "cert">("about");
   const currentTab = controlledTab ?? internalTab;
-  const [photoIndex, setPhotoIndex] = useState<number>(0);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
   const handleTabClick = (tab: "about" | "skills" | "cert") => {
@@ -71,91 +57,65 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
             aria-label="Kartu profil interaktif, klik untuk membalik"
           >
             <div className="card-flip-inner relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/[0.08]">
-              {/* Front Face */}
-              <div className="card-face absolute inset-0 bg-[#0a0a0a] flex flex-col justify-end p-6">
+              {/* Front Face: Flip Pertama (Portrait Selfie HD) */}
+              <div className="card-face absolute inset-0 bg-[#0a0a0a] flex flex-col justify-end p-6 select-none">
                 <Image
-                  src={profilePhotos[photoIndex].src}
-                  alt={profilePhotos[photoIndex].alt}
+                  src="/images/profile/portrait.webp"
+                  alt={`Potret ${personalInfo.name}`}
                   fill
-                  className="object-cover object-center transition-all duration-700 ease-out"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority
+                  unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent opacity-90 pointer-events-none" />
-
-                {/* Flip Hint */}
-                <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/[0.08] text-[9px] font-sans tracking-[1.5px] uppercase text-[#f5ebe0]/70 pointer-events-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c41e4a] animate-pulse" />
-                  <span>Tap to flip</span>
-                </div>
-
-                {/* Photo Switcher */}
-                <div
-                  className="absolute top-4 right-4 z-20 flex items-center gap-1 p-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 shadow-lg"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {profilePhotos.map((photo, idx) => (
-                    <button
-                      key={photo.src}
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setPhotoIndex(idx);
-                      }}
-                      className={`px-2.5 py-1 rounded-full text-[10px] font-sans tracking-[1px] uppercase transition-all duration-300 ${
-                        photoIndex === idx
-                          ? "bg-white text-black font-semibold shadow-sm"
-                          : "text-[#f5ebe0]/60 hover:text-[#f5ebe0] hover:bg-white/[0.08]"
-                      }`}
-                    >
-                      {photo.label}
-                    </button>
-                  ))}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/30 to-transparent opacity-90 pointer-events-none" />
 
                 <div className="relative z-10 text-left pointer-events-none">
                   <p className="font-heading font-light text-xl text-[#f5ebe0] tracking-[1px]">
                     {personalInfo.name}
                   </p>
-                  <p className="font-sans text-xs text-[#f5ebe0]/60 tracking-[1.5px] uppercase mt-0.5">
+                  <p className="font-sans text-xs text-[#f5ebe0]/70 tracking-[1.5px] uppercase mt-0.5">
                     {personalInfo.title}
                   </p>
                 </div>
               </div>
 
-              {/* Back Face */}
-              <div className="card-face card-back absolute inset-0 bg-[#0a0a0a] p-8 flex flex-col justify-between border border-white/[0.12] text-left overflow-hidden">
-                {/* Ambient photo backdrop on card back */}
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                  <Image
-                    src={profilePhotos[photoIndex === 0 ? 1 : 0].src}
-                    alt=""
-                    fill
-                    className="object-cover opacity-20 filter blur-sm scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#120306]/95 via-[#050505]/90 to-[#1a050b]/95" />
-                </div>
+              {/* Back Face: Flip Kedua (Sunset Outdoor HD) */}
+              <div className="card-face card-back absolute inset-0 bg-[#0a0a0a] flex flex-col justify-end p-6 border border-white/[0.12] text-left overflow-hidden select-none">
+                <Image
+                  src="/images/profile/portrait-sunset.webp"
+                  alt={`${personalInfo.name} Sunset`}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  priority
+                  unoptimized
+                />
+                {/* Subtle gradient overlay so photo remains clear in HD and text is legible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/75 to-transparent/20 pointer-events-none" />
 
-                <div className="relative z-10">
-                  <span className="font-cursive text-4xl text-[#f5ebe0]/80">
-                    passion & code
-                  </span>
-                  <p className="normal-text text-sm text-[#f5ebe0]/80 mt-4 leading-relaxed">
-                    &quot;Membangun perangkat lunak yang andal, indah, dan bermanfaat
-                    melalui rekayasa yang disiplin dan desain editorial yang elegan.&quot;
-                  </p>
-                </div>
+                <div className="relative z-10 space-y-3 pointer-events-none">
+                  <div>
+                    <span className="font-cursive text-3xl sm:text-4xl text-[#f5ebe0]">
+                      passion & code
+                    </span>
+                    <p className="normal-text text-xs sm:text-sm text-[#f5ebe0]/90 mt-1.5 leading-relaxed">
+                      &quot;Membangun perangkat lunak yang andal, indah, dan bermanfaat
+                      melalui rekayasa yang disiplin dan desain editorial yang elegan.&quot;
+                    </p>
+                  </div>
 
-                <div className="relative z-10 space-y-2 pt-6 border-t border-white/[0.08] text-xs text-[#f5ebe0]/60">
-                  <p>
-                    <strong className="text-[#f5ebe0]">Pendidikan:</strong> Teknik Informatika (IPK 3.73)
-                  </p>
-                  <p>
-                    <strong className="text-[#f5ebe0]">Fokus:</strong> Flutter, Next.js, AI & Computer Vision
-                  </p>
-                  <p>
-                    <strong className="text-[#f5ebe0]">Status:</strong> {personalInfo.status}
-                  </p>
+                  <div className="pt-3 border-t border-white/[0.15] text-xs text-[#f5ebe0]/80 space-y-1">
+                    <p>
+                      <strong className="text-[#f5ebe0]">Pendidikan:</strong> Teknik Informatika (IPK 3.73)
+                    </p>
+                    <p>
+                      <strong className="text-[#f5ebe0]">Fokus:</strong> Flutter, Next.js, AI & Computer Vision
+                    </p>
+                    <p>
+                      <strong className="text-[#f5ebe0]">Status:</strong> {personalInfo.status}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
