@@ -264,7 +264,8 @@
   transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-flip-wrapper:hover .card-flip-inner {
+.card-flip-wrapper:hover .card-flip-inner,
+.card-flip-wrapper.is-flipped .card-flip-inner {
   transform: translateY(-8px) rotateY(180deg);
 }
 
