@@ -38,12 +38,6 @@ export function AboutPortraitCard() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent opacity-85 pointer-events-none" />
 
           <div className="relative z-10 text-left pointer-events-none">
-            <p className="font-heading font-light text-xl text-[#f5ebe0] tracking-[1px]">
-              {personalInfo.name}
-            </p>
-            <p className="font-sans text-xs text-[#f5ebe0]/70 tracking-[1.5px] uppercase mt-0.5">
-              {personalInfo.title}
-            </p>
           </div>
         </div>
 
