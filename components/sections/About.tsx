@@ -28,16 +28,6 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
 
   return (
     <section id="about" className="py-24 sm:py-32 relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-      {/* Editorial Section Heading - Aligned Right & Lowercase */}
-      <div className="flex justify-end mb-12 sm:mb-16">
-        <h2 className="heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[2px] font-light text-[#f5ebe0] lowercase leading-none inline-flex items-center gap-2.5 sm:gap-4 justify-end flex-wrap">
-          <span>about</span>
-          <span className="cursive-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#f5ebe0] lowercase">
-            me
-          </span>
-        </h2>
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column: 3D Flip Portrait Card - Vertically Centered */}
         <div className="lg:col-span-5 flex justify-center">
@@ -88,6 +78,16 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
 
         {/* Right Column: Tabbed Content Container */}
         <div className="lg:col-span-7 flex flex-col">
+          {/* Editorial Section Heading - Sejajar Vertikal dengan Isi About Me */}
+          <div className="mb-6 sm:mb-8">
+            <h2 className="heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[2px] font-light text-[#f5ebe0] lowercase leading-none inline-flex items-center gap-2.5 sm:gap-4 flex-wrap">
+              <span>about</span>
+              <span className="cursive-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#f5ebe0] lowercase">
+                me
+              </span>
+            </h2>
+          </div>
+
           {/* Enhanced Nav Buttons Container */}
           <div className="about-nav-container inline-flex items-center gap-2 p-1.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] mb-8 w-fit">
             <button
