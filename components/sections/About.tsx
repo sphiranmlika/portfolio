@@ -60,11 +60,11 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                 />
               </div>
 
-              {/* Back Face: Flip Kedua (Foto 2 - Sunset Outdoor HD) */}
+              {/* Back Face: Flip Kedua (Foto 2 - Outdoor Daylight HD) */}
               <div className="card-face card-back absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.12] bg-[#0a0a0a] select-none shadow-2xl">
                 <Image
                   src="/images/profile/portrait-sunset.webp"
-                  alt={`${personalInfo.name} Sunset`}
+                  alt={`${personalInfo.name} Outdoor`}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 400px"

@@ -9,9 +9,8 @@ export function AboutPortraitCard() {
 
   return (
     <div
-      className={`card-flip-wrapper w-64 sm:w-80 lg:w-full max-w-sm aspect-[4/5] cursor-pointer ${
-        isFlipped ? "is-flipped" : ""
-      }`}
+      className={`card-flip-wrapper w-64 sm:w-80 lg:w-full max-w-sm aspect-[4/5] cursor-pointer ${isFlipped ? "is-flipped" : ""
+        }`}
       onClick={() => setIsFlipped((prev) => !prev)}
       role="button"
       tabIndex={0}
@@ -37,11 +36,11 @@ export function AboutPortraitCard() {
           />
         </div>
 
-        {/* Back Face: Flip Kedua (Foto 2 - Sunset Outdoor HD) */}
+        {/* Back Face: Flip Kedua (Foto 2 - Outdoor Daylight HD) */}
         <div className="card-face card-back absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.12] bg-[#0a0a0a] select-none shadow-2xl">
           <Image
             src="/images/profile/portrait-sunset.webp"
-            alt={`${personalInfo.name} Sunset`}
+            alt={`${personalInfo.name} Outdoor`}
             fill
             className="object-cover object-center"
             sizes="(max-width: 768px) 300px, 380px"
