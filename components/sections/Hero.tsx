@@ -66,7 +66,7 @@ export function Hero() {
             className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-white/20 bg-white/[0.04] text-[#f5ebe0] hover:bg-white/[0.09] hover:border-white/40 transition-all duration-300 text-xs sm:text-sm font-sans tracking-[1.5px] uppercase"
           >
             <Download className="w-4 h-4 text-[#7a0c12]" />
-            <span>Unduh CV</span>
+            <span>Download CV</span>
           </a>
 
           {/* Social Icons */}
