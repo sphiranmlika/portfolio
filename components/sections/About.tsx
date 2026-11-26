@@ -126,21 +126,16 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
           {currentTab === "about" && (
             <div className="space-y-6 text-[#f5ebe0]/80 normal-text text-sm sm:text-base leading-relaxed animate-fadeIn">
               <p>
-                Saya adalah seorang <strong>Software Engineer</strong> dengan spesialisasi
-                dalam rekayasa aplikasi mobile (Flutter) dan solusi web modern. Saya memiliki
-                rekam jejak dalam membangun sistem digital fungsional — mulai dari aplikasi
-                pertanian cerdas (FarmTech), pelestarian bahasa daerah, sistem presensi dengan
-                validasi multi-faktor geofencing, hingga platform e-commerce berbasis computer vision.
+                I am a Computer Science graduate from Institut Teknologi Bacharuddin Jusuf Habibie with a GPA of 3.73/4.00 and a strong interest in Software Engineering and digital solution development. I have experience developing web-based and mobile applications through internships and academic projects.
               </p>
               <p>
-                Pendekatan rekayasa saya berakar pada pertimbangan praktis: latensi rendah,
-                keamanan data, keandalan offline, serta pengalaman pengguna yang intuitif — bukan
-                sekadar fungsionalitas di atas kertas.
+                My experience includes contributing to the development of the <strong className="text-[#f5ebe0]">Electronic-Based Government System (SPBE) platform for Parepare City</strong> at the Department of Communication and Informatics, as well as an <strong className="text-[#f5ebe0]">Information System and Internship Registration System</strong> at the Parepare District Court. I also developed an academic project: a Flutter-based student attendance application featuring multi-factor validation through geofencing, device validation, and selfie verification.
               </p>
               <p>
-                Bagi saya, setiap baris kode adalah jembatan antara kebutuhan nyata manusia
-                dan efisiensi teknologi. Saya tidak hanya menunggu peluang; saya merancang dan
-                membangunnya.
+                Beyond my academic and professional experience, I was actively involved in the <strong className="text-[#f5ebe0]">Habibie Engineering Robotic Organization (HERO)</strong> as a member of the Public Relations Division, participating in educational activities, training sessions, seminars, and robotics competitions.
+              </p>
+              <p>
+                My technical skills include React.js, Flutter, PHP, Laravel, Python, SQL, Figma, AutoCAD, and Git/GitHub. I also bring strong analytical thinking, problem-solving, adaptability, and attention to detail, with the ability to work independently and collaboratively in a team. I am committed to continuous learning and growth while contributing to the development of innovative, effective, and impactful digital solutions.
               </p>
             </div>
           )}
