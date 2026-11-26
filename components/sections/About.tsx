@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Award } from "lucide-react";
+import { ArrowRight, ExternalLink, Award, RotateCw } from "lucide-react";
 import { personalInfo } from "@/data/personal";
 import { skillCategories } from "@/data/skills";
 import { certificates } from "@/data/certificates";
@@ -58,7 +58,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
           >
             <div className="card-flip-inner relative w-full h-full">
               {/* Front Face: Flip Pertama (Foto 1 - Portrait Selfie HD) */}
-              <div className="card-face absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0a0a0a] select-none shadow-2xl">
+              <div className="card-face absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0a0a0a] select-none shadow-2xl group">
                 <Image
                   src="/images/profile/portrait.webp"
                   alt={`Potret ${personalInfo.name}`}
@@ -68,10 +68,14 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                   priority
                   unoptimized
                 />
+                {/* Subtle Flip Cue Icon */}
+                <div className="absolute bottom-4 right-4 z-20 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center text-[#f5ebe0]/70 pointer-events-none shadow-lg transition-transform duration-500">
+                  <RotateCw className="w-3.5 h-3.5" />
+                </div>
               </div>
 
               {/* Back Face: Flip Kedua (Foto 2 - Sunset Outdoor HD) */}
-              <div className="card-face card-back absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.12] bg-[#0a0a0a] select-none shadow-2xl">
+              <div className="card-face card-back absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.12] bg-[#0a0a0a] select-none shadow-2xl group">
                 <Image
                   src="/images/profile/portrait-sunset.webp"
                   alt={`${personalInfo.name} Sunset`}
@@ -81,6 +85,10 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                   priority
                   unoptimized
                 />
+                {/* Subtle Flip Cue Icon */}
+                <div className="absolute bottom-4 right-4 z-20 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/15 flex items-center justify-center text-[#f5ebe0]/70 pointer-events-none shadow-lg transition-transform duration-500">
+                  <RotateCw className="w-3.5 h-3.5" />
+                </div>
               </div>
             </div>
           </div>
@@ -137,6 +145,34 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
               <p>
                 My technical skills include React.js, Flutter, PHP, Laravel, Python, SQL, Figma, AutoCAD, and Git/GitHub. I also bring strong analytical thinking, problem-solving, adaptability, and attention to detail, with the ability to work independently and collaboratively in a team. I am committed to continuous learning and growth while contributing to the development of innovative, effective, and impactful digital solutions.
               </p>
+
+              {/* Quick Stats Bar */}
+              <div className="pt-6 mt-2 border-t border-white/[0.08] grid grid-cols-3 gap-4">
+                <div className="space-y-1">
+                  <p className="font-heading text-2xl sm:text-3xl text-[#f5ebe0] font-light tracking-[1px]">
+                    3.73
+                  </p>
+                  <p className="font-sans text-[10px] sm:text-xs text-[#f5ebe0]/60 tracking-[1.5px] uppercase">
+                    GPA (Scale 4.00)
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-heading text-2xl sm:text-3xl text-[#f5ebe0] font-light tracking-[1px]">
+                    4+
+                  </p>
+                  <p className="font-sans text-[10px] sm:text-xs text-[#f5ebe0]/60 tracking-[1.5px] uppercase">
+                    Production Systems
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-heading text-2xl sm:text-3xl text-[#f5ebe0] font-light tracking-[1px]">
+                    HERO
+                  </p>
+                  <p className="font-sans text-[10px] sm:text-xs text-[#f5ebe0]/60 tracking-[1.5px] uppercase">
+                    Robotics Org (PR)
+                  </p>
+                </div>
+              </div>
             </div>
           )}
 
@@ -144,7 +180,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
           {currentTab === "skills" && (
             <div className="animate-fadeIn space-y-6">
               <p className="text-xs tracking-[1.5px] uppercase text-[#f5ebe0]/60 font-sans">
-                Teknologi & Alat Rekayasa Utama
+                Core Technologies & Tools
               </p>
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4">
                 {skillCategories.flatMap((cat) => cat.skills).map((skill) => (
@@ -182,7 +218,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
           {currentTab === "cert" && (
             <div className="animate-fadeIn space-y-4">
               <p className="text-xs tracking-[1.5px] uppercase text-[#f5ebe0]/60 font-sans mb-4">
-                Sertifikat & Kredensial Pilihan
+                Featured Certifications & Credentials
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {certificates.slice(0, 4).map((cert) => (
@@ -214,7 +250,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-xs text-[#f5ebe0] hover:text-white transition-colors"
                         >
-                          <span>Kredensial</span>
+                          <span>Credential</span>
                           <ExternalLink className="w-3 h-3 text-[#7a0c12]" />
                         </a>
                       )}
@@ -229,7 +265,7 @@ export function About({ activeTab: controlledTab, onTabChange }: AboutProps) {
                   className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[2px] font-sans text-[#f5ebe0] hover:text-white group border-b border-[#7a0c12] pb-1"
                 >
                   <Award className="w-4 h-4 text-[#7a0c12]" />
-                  <span>Lihat Semua Sertifikasi ({certificates.length})</span>
+                  <span>View All Certifications ({certificates.length})</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-[#7a0c12]" />
                 </Link>
               </div>
