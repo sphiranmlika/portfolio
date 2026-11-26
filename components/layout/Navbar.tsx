@@ -54,11 +54,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#050505]/85 backdrop-blur-md border-b border-white/[0.08] py-4"
-          : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-[#050505]/85 backdrop-blur-md border-b border-white/[0.08] py-4"
+        : "bg-transparent py-6"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Brand Logo */}
@@ -74,10 +73,29 @@ export function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 lg:gap-10">
-          <ul className="flex items-center gap-7 lg:gap-9 text-sm font-sans tracking-[1.5px] uppercase">
+          <ul className="flex items-center gap-6 lg:gap-8 text-xs sm:text-sm font-sans tracking-[1.5px] uppercase">
             {navItems.map((item) => {
               const targetId = item.href.replace("/#", "");
               const isActive = pathname === "/" && activeSection === targetId;
+              const isContact = targetId === "contact";
+
+              if (isContact) {
+                return (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className={`inline-flex items-center px-4 py-1.5 rounded-full border transition-all duration-300 ${
+                        isActive
+                          ? "border-white bg-white/10 text-white font-medium shadow-sm"
+                          : "border-white/20 bg-white/[0.03] text-[#f5ebe0]/80 hover:text-white hover:border-white/50 hover:bg-white/[0.08]"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              }
 
               return (
                 <li
@@ -87,11 +105,10 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`transition-colors duration-300 py-1 ${
-                      isActive
-                        ? "text-[#ffffff] font-medium"
-                        : "text-[#f5ebe0]/70 hover:text-[#ffffff]"
-                    }`}
+                    className={`transition-colors duration-300 py-1 ${isActive
+                      ? "text-[#ffffff] font-medium"
+                      : "text-[#f5ebe0]/70 hover:text-[#ffffff]"
+                      }`}
                   >
                     {item.label}
                   </Link>
@@ -110,19 +127,16 @@ export function Navbar() {
           aria-expanded={mobileMenuOpen}
         >
           <span
-            className={`w-6 h-[1.5px] bg-[#f5ebe0] transition-all duration-300 ${
-              mobileMenuOpen ? "rotate-45 translate-y-[7.5px]" : ""
-            }`}
+            className={`w-6 h-[1.5px] bg-[#f5ebe0] transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-[7.5px]" : ""
+              }`}
           />
           <span
-            className={`w-6 h-[1.5px] bg-[#f5ebe0] transition-opacity duration-300 ${
-              mobileMenuOpen ? "opacity-0" : "opacity-100"
-            }`}
+            className={`w-6 h-[1.5px] bg-[#f5ebe0] transition-opacity duration-300 ${mobileMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
           />
           <span
-            className={`w-6 h-[1.5px] bg-[#f5ebe0] transition-all duration-300 ${
-              mobileMenuOpen ? "-rotate-45 -translate-y-[7.5px]" : ""
-            }`}
+            className={`w-6 h-[1.5px] bg-[#f5ebe0] transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-[7.5px]" : ""
+              }`}
           />
         </button>
       </div>
@@ -140,11 +154,10 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`block py-1 transition-colors ${
-                      isActive
-                        ? "text-[#ffffff] font-medium pl-2 border-l border-[#7a0c12]"
-                        : "text-[#f5ebe0]/70 hover:text-[#ffffff]"
-                    }`}
+                    className={`block py-1 transition-colors ${isActive
+                      ? "text-[#ffffff] font-medium pl-2 border-l border-[#7a0c12]"
+                      : "text-[#f5ebe0]/70 hover:text-[#ffffff]"
+                      }`}
                   >
                     {item.label}
                   </Link>

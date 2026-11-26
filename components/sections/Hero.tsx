@@ -116,6 +116,32 @@ export function Hero() {
           </AnimatePresence>
         </motion.div>
       </div>
+
+      {/* Subtle Editorial Scroll Down Indicator */}
+      <motion.a
+        href="#about"
+        onClick={(e) => {
+          e.preventDefault();
+          const el = document.getElementById("about");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9, duration: 1 }}
+        className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-[#f5ebe0]/40 hover:text-[#f5ebe0] transition-colors cursor-pointer group select-none z-10"
+        aria-label="Scroll ke section About"
+      >
+        <span className="text-[9px] sm:text-[10px] uppercase font-sans tracking-[2.5px] opacity-70 group-hover:opacity-100 transition-opacity">
+          scroll
+        </span>
+        <div className="w-[1px] h-6 bg-gradient-to-b from-[#f5ebe0]/30 to-transparent group-hover:from-[#f5ebe0]/70 transition-colors relative overflow-hidden">
+          <motion.div
+            animate={{ y: [0, 24, 0] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-full h-2 bg-[#7a0c12]"
+          />
+        </div>
+      </motion.a>
     </section>
   );
 }

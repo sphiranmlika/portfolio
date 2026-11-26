@@ -36,7 +36,7 @@ export const personalInfo: PersonalInfo = {
   location: "Parepare, Sulawesi Selatan, Indonesia",
   status: "Terbuka untuk Peluang Kerja & Kolaborasi",
   socials: {
-    github: "https://github.com",
+    github: "https://github.com/sphiranmlika",
     linkedin: "https://linkedin.com",
     email: "mailto:saphiranurmalika@gmail.com",
   },
